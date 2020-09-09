@@ -1,0 +1,5 @@
+__pycache__/
+
+oauth2.json
+spotify_info.py
+client_id.json
