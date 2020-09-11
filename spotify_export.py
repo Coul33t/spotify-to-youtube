@@ -1,5 +1,6 @@
 # Core library import
 import os
+import json
 
 # External library imports
 import spotipy
@@ -48,6 +49,18 @@ class SpotifyPlaylistExport:
 
         return formated_tracks
 
+    def format_tracks_to_json(self):
+        formated_tracks = []
+
+        for track in self.tracks_with_metadata:
+            track = track['track']
+            artists = [x['name'] for x in track['artists']]
+            artists = ", ".join(artists)
+
+            formated_tracks.append({'title': track['name'], 'artist': artists, 'duration': int(track['duration_ms'] / 1000), 'Spotify id': track['id']})
+
+        return formated_tracks
+
     def export_to_text_file(self, filename="tracks.txt"):
         formatted_tracks = self.format_tracks_to_text()
 
@@ -61,8 +74,20 @@ class SpotifyPlaylistExport:
             for track in formatted_tracks:
                 output_file.write(f'{track}\n')
 
+    def export_to_json_file(self, filename='tracks.json'):
+        formatted_tracks = self.format_tracks_to_json()
+
+        if '.json' not in filename:
+            filename += '.json'
+
+        if not os.path.exists('text_playlists'):
+            os.makedirs('text_playlists')
+
+        with open('text_playlists/' + filename, 'w', encoding='utf-8') as output_file:
+            json.dump(formatted_tracks, output_file, indent=4)
+
 
 if __name__ == '__main__':
     spot = SpotifyPlaylistExport()
     spot.get_playlist_tracks('Coulis', 'spotify:playlist:3R2EyheKQiUeqoV3VyoTI4')
-    spot.export_to_text_file('Suprem Kontin.txt')
+    spot.export_to_json_file('Suprem Kontin')

@@ -1,7 +1,10 @@
+# Core library imports
 import httplib2
 import os
 import sys
+import json
 
+# External library imports
 import isodate
 
 from apiclient.discovery import build
@@ -28,7 +31,6 @@ class YoutubePlaylistImport:
     """
         See https://www.reddit.com/r/learnpython/comments/389yn0/google_python_youtube_playlist_api/
     """
-
     def access_to_youtube(self):
         CLIENT_SECRETS_FILE = "client_id.json"
         MISSING_CLIENT_SECRETS_MESSAGE ='WARNING: Please configure OAuth 2.0'
@@ -57,54 +59,61 @@ class YoutubePlaylistImport:
     def create_playlist(self):
         # This code creates a new, private playlist in the authorized user's channel.
         playlists_insert_response = self.youtube.playlists().insert(
-        part="snippet,status",
-        body=dict(
-            snippet=dict(
-            title=self.playlist_name,
-            description=self.playlist_description
-            ),
-            status=dict(
-            privacyStatus=self.playlist_visiblity
+            part="snippet,status",
+            body=dict(
+                snippet=dict(
+                title=self.playlist_name,
+                description=self.playlist_description
+                ),
+                status=dict(
+                privacyStatus=self.playlist_visiblity
+                )
             )
-        )
         ).execute()
 
         print(f"New playlist id: {playlists_insert_response['id']}")
         self.playlist_id = playlists_insert_response['id']
 
     def get_video(self, desired_video_info):
-        print(f'Looking for {desired_video_info}...')
+        print(f"Looking for {desired_video_info['title']} - {desired_video_info['artist']}...")
         # TODO: take care of musics longer than 59min 59s
-        keywords = desired_video_info[:desired_video_info.find("(")-1].replace('[', '').replace(']', '')
-        music_length = desired_video_info[desired_video_info.find("(")+1:desired_video_info.find(")")]
-        music_length_sec = int(music_length[:music_length.find(':')]) * 60 + int(music_length[music_length.find(':')+1:])
+        music_length_sec = desired_video_info['duration']
 
         # TODO: try with
-        # self.youtube.search().list(q=keywords, part='contentDetails', type='video', maxResults=3, pageToken=None)
-        req = self.youtube.search().list(q=keywords, part='snippet', type='video', maxResults=3, pageToken=None)
+        # req = self.youtube.search().list(q=keywords, part='contentDetails', type='video', maxResults=3, pageToken=None)
+        keywords = " ".join([desired_video_info['title'], desired_video_info['artist']])
+        req = self.youtube.search().list(q=keywords, part='snippet', type='video', maxResults=10, pageToken=None)
         all_res = req.execute()
 
         closest_length = 999999
         closest_match = None
 
-        for res in all_res['items']:
-            req2 = self.youtube.videos().list(part='snippet,contentDetails', id=res['id']['videoId'])
-            res2 = req2.execute()
+        ids = []
 
-            video_length_sec = int(isodate.parse_duration(res2['items'][0]['contentDetails']['duration']).total_seconds())
+        for res in all_res['items']:
+            ids.append(res['id']['videoId'])
+
+        ids = ",".join(ids)
+
+        # TODO: try to add "statistics " to part
+        req2 = self.youtube.videos().list(part='snippet,contentDetails', id=ids)
+        res2 = req2.execute()
+
+        for res in res2['items']:
+            video_length_sec = int(isodate.parse_duration(res['contentDetails']['duration']).total_seconds())
 
             difference = abs(music_length_sec - video_length_sec)
 
             if difference == 0:
-                print(f"Found a video with same length: {res2['items'][0]['snippet']['title']}")
-                return res2['items'][0]['id']
+                print(f"Found a video with same length: {res['snippet']['title']}")
+                return res['id']
 
             elif closest_length > difference:
                 closest_length = difference
-                closest_match = res2
+                closest_match = res
 
-        print(f"Closest match found: {closest_match['items'][0]['snippet']['title']} ({closest_match['items'][0]['contentDetails']['duration']})")
-        return closest_match['items'][0]['id']
+        print(f"Closest match found: {closest_match['snippet']['title']} ({closest_match['contentDetails']['duration']})")
+        return closest_match['id']
 
     def add_video_to_playlist(self, video_id):
         add_video_request= self.youtube.playlistItems().insert(
@@ -127,9 +136,10 @@ class YoutubePlaylistImport:
             return
 
         with open(filename, 'r', encoding='utf-8') as pl_file:
-            songs = pl_file.readlines()
-            for song in songs:
-                song_id = self.get_video(song[:-1])
+            json_playlist = json.load(pl_file)
+
+            for song in json_playlist:
+                song_id = self.get_video(song)
                 self.add_video_to_playlist(song_id)
 
 if __name__ == '__main__':
@@ -137,6 +147,7 @@ if __name__ == '__main__':
     yt_import = YoutubePlaylistImport(playlist_name=filename,
                        playlist_description='No description provided',
                        playlist_visiblity='public')
-    yt_import.create_playlist()
-    yt_import.populate_playlist(f'text_playlists/{filename}.txt')
+    #yt_import.create_playlist()
+    yt_import.playlist_id = 'PLx9FppSD_JKjb21azV2q4GiWdFTDeC-Rf'
+    yt_import.populate_playlist(f'text_playlists/{filename}.json')
     #yt_import.get_video("The Globalist [Muse] (10:00)")

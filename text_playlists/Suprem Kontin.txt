@@ -1,39 +1,39 @@
-Lost [Desired] (173)
-Edge of the World [Karma Fields] (313)
-Koto [CloZee] (250)
-Cubensis Lenses [Psychedelic Porn Crumpets] (343)
-Crunk De Gaulle [edIT, TTC, Busdriver, D-Styles] (300)
-Lamb [Iglooghost, Kai Whiston, BABii] (244)
-bad guy [Billie Eilish] (194)
-Sleep Now In the Fire [Rage Against The Machine] (205)
-WIENER BLUT [Rammstein] (232)
-Sound Chimera [Laur] (307)
-Memory Lane [AcesToAces] (135)
-One Trick Pony [deadmau5] (239)
-Gaviscon [Ruby My Dear] (211)
-Planisphere [Justice] (1059)
-Bulletproof - Chime Remix [Doctor P, Chime, Eva Simons] (200)
-The New Crown - Kognitif Remix [Chinese Man, A-F-R-O, A.S.M., Taiwan MC, Kognitif] (277)
-Dans Le Club [TTC] (237)
-Catalogue [TTC] (160)
-I Need U [Jeremy Blake] (355)
-Saïgon to Paris [Tha Trickaz] (239)
-Mecca - Original Mix [Savant] (343)
-Lovesick [Moe Shop, maisou] (172)
-The Drink Is Called Rakija [Gramatik] (298)
-Colours [The Prodigy] (207)
-La Mort Sur Le Dancefloor [Vitalic] (213)
-Tales Of The Chameleon [Does It Offend You, Yeah?] (219)
-Invaders Must Die [The Prodigy] (295)
-The Parachute Ending [Birdy Nam Nam] (350)
-Seeya [deadmau5, Colleen D'agostino] (400)
-Phantom [Justice] (262)
-Phantom Pt. II [Justice] (200)
-Ants [edIT] (243)
-You & Me - Flume Remix [Disclosure, Eliza Doolittle, Flume] (282)
-Leaving Las Vegas [Besnine] (291)
-Overkill [RIOT] (342)
-Signatune - Thomas Bangalter Edit [DJ Mehdi] (379)
-Une bande de mecs sympas [TTC] (260)
-Lucky Star [Superfunk, Ron Carroll] (295)
-No Good (Start The Dance) [The Prodigy] (379)
+[-TITLE-]:Lost [-ARTIST-]:Desired [-DURATION-]:173
+[-TITLE-]:Edge of the World [-ARTIST-]:Karma Fields [-DURATION-]:313
+[-TITLE-]:Koto [-ARTIST-]:CloZee [-DURATION-]:250
+[-TITLE-]:Cubensis Lenses [-ARTIST-]:Psychedelic Porn Crumpets [-DURATION-]:343
+[-TITLE-]:Crunk De Gaulle [-ARTIST-]:edIT, TTC, Busdriver, D-Styles [-DURATION-]:300
+[-TITLE-]:Lamb [-ARTIST-]:Iglooghost, Kai Whiston, BABii [-DURATION-]:244
+[-TITLE-]:bad guy [-ARTIST-]:Billie Eilish [-DURATION-]:194
+[-TITLE-]:Sleep Now In the Fire [-ARTIST-]:Rage Against The Machine [-DURATION-]:205
+[-TITLE-]:WIENER BLUT [-ARTIST-]:Rammstein [-DURATION-]:232
+[-TITLE-]:Sound Chimera [-ARTIST-]:Laur [-DURATION-]:307
+[-TITLE-]:Memory Lane [-ARTIST-]:AcesToAces [-DURATION-]:135
+[-TITLE-]:One Trick Pony [-ARTIST-]:deadmau5 [-DURATION-]:239
+[-TITLE-]:Gaviscon [-ARTIST-]:Ruby My Dear [-DURATION-]:211
+[-TITLE-]:Planisphere [-ARTIST-]:Justice [-DURATION-]:1059
+[-TITLE-]:Bulletproof - Chime Remix [-ARTIST-]:Doctor P, Chime, Eva Simons [-DURATION-]:200
+[-TITLE-]:The New Crown - Kognitif Remix [-ARTIST-]:Chinese Man, A-F-R-O, A.S.M., Taiwan MC, Kognitif [-DURATION-]:277
+[-TITLE-]:Dans Le Club [-ARTIST-]:TTC [-DURATION-]:237
+[-TITLE-]:Catalogue [-ARTIST-]:TTC [-DURATION-]:160
+[-TITLE-]:I Need U [-ARTIST-]:Jeremy Blake [-DURATION-]:355
+[-TITLE-]:Saïgon to Paris [-ARTIST-]:Tha Trickaz [-DURATION-]:239
+[-TITLE-]:Mecca - Original Mix [-ARTIST-]:Savant [-DURATION-]:343
+[-TITLE-]:Lovesick [-ARTIST-]:Moe Shop, maisou [-DURATION-]:172
+[-TITLE-]:The Drink Is Called Rakija [-ARTIST-]:Gramatik [-DURATION-]:298
+[-TITLE-]:Colours [-ARTIST-]:The Prodigy [-DURATION-]:207
+[-TITLE-]:La Mort Sur Le Dancefloor [-ARTIST-]:Vitalic [-DURATION-]:213
+[-TITLE-]:Tales Of The Chameleon [-ARTIST-]:Does It Offend You, Yeah? [-DURATION-]:219
+[-TITLE-]:Invaders Must Die [-ARTIST-]:The Prodigy [-DURATION-]:295
+[-TITLE-]:The Parachute Ending [-ARTIST-]:Birdy Nam Nam [-DURATION-]:350
+[-TITLE-]:Seeya [-ARTIST-]:deadmau5, Colleen D'agostino [-DURATION-]:400
+[-TITLE-]:Phantom [-ARTIST-]:Justice [-DURATION-]:262
+[-TITLE-]:Phantom Pt. II [-ARTIST-]:Justice [-DURATION-]:200
+[-TITLE-]:Ants [-ARTIST-]:edIT [-DURATION-]:243
+[-TITLE-]:You & Me - Flume Remix [-ARTIST-]:Disclosure, Eliza Doolittle, Flume [-DURATION-]:282
+[-TITLE-]:Leaving Las Vegas [-ARTIST-]:Besnine [-DURATION-]:291
+[-TITLE-]:Overkill [-ARTIST-]:RIOT [-DURATION-]:342
+[-TITLE-]:Signatune - Thomas Bangalter Edit [-ARTIST-]:DJ Mehdi [-DURATION-]:379
+[-TITLE-]:Une bande de mecs sympas [-ARTIST-]:TTC [-DURATION-]:260
+[-TITLE-]:Lucky Star [-ARTIST-]:Superfunk, Ron Carroll [-DURATION-]:295
+[-TITLE-]:No Good (Start The Dance) [-ARTIST-]:The Prodigy [-DURATION-]:379
