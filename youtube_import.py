@@ -142,12 +142,15 @@ class YoutubePlaylistImport:
                 song_id = self.get_video(song)
                 self.add_video_to_playlist(song_id)
 
+# TODO:
+#       - check if playlist name already exists
+#       - check if playlist contains songs from the list (skip if it's the case)
 if __name__ == '__main__':
     filename = 'Suprem Kontin'
     yt_import = YoutubePlaylistImport(playlist_name=filename,
                        playlist_description='No description provided',
                        playlist_visiblity='public')
     #yt_import.create_playlist()
-    yt_import.playlist_id = 'PLx9FppSD_JKjb21azV2q4GiWdFTDeC-Rf'
+    #yt_import.playlist_id = 'PLx9FppSD_JKjb21azV2q4GiWdFTDeC-Rf'
     yt_import.populate_playlist(f'text_playlists/{filename}.json')
     #yt_import.get_video("The Globalist [Muse] (10:00)")
